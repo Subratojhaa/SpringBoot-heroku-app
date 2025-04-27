@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StreamMaster | Practice Zone</title>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="bg-slate-50 min-h-screen flex flex-col">
+
+    <!-- Header -->
+    <header class="bg-slate-800 text-white text-center py-8 px-4 shadow-md">
+        <div class="max-w-4xl mx-auto">
+            <h1 class="text-5xl font-bold mb-2">StreamMaster</h1>
+            <p class="text-xl text-blue-200">Your Gateway to master Java Stream API 🔥</p>
+            
+            <!-- Progress Bar -->
+            <div class="mt-6 max-w-2xl mx-auto">
+                <p class="text-left mb-2">Total Questions Solved: <span class="font-bold">15</span> (18.75% Done)</p>
+                <div class="w-full bg-gray-200 rounded-full h-4">
+                    <div class="bg-green-500 h-4 rounded-full" style="width: 18.75%"></div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Challenge Banner -->
+    <div class="bg-gradient-to-r from-red-500 to-pink-500 text-white p-4 mx-4 my-6 rounded-lg shadow-lg max-w-4xl lg:mx-auto">
+        <div class="flex flex-col sm:flex-row justify-between items-center">
+            <p class="font-bold text-lg mb-2 sm:mb-0">Code your way to the top and win big in the 30 Day Stream API Challenge by StreamMaster!</p>
+            <a href="#" class="bg-white text-pink-600 px-4 py-2 rounded-md font-bold hover:bg-gray-100 transition">Start Now</a>
+        </div>
+    </div>
+
+    <!-- Main content -->
+    <main class="flex-1 container mx-auto px-4 py-6">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
+            
+            <!-- Easy Section -->
+            <div class="bg-green-50 rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow duration-300 border border-green-100">
+                <div class="bg-green-600 p-3 text-white">
+                    <h2 class="text-2xl font-bold">Easy</h2>
+                </div>
+                <div class="p-4">
+                    <p class="text-gray-700 mb-1">Total Questions: 25</p>
+                    <p class="text-gray-700 mb-3">10 More to go</p>
+                    <div class="w-full bg-gray-200 rounded-full h-3 mb-4">
+                        <div class="bg-green-500 h-3 rounded-full" style="width: 60%"></div>
+                    </div>
+                    <p class="text-gray-600 mb-3 text-sm">60% Done</p>
+                    <a th:href="@{/easy}" class="block w-full bg-green-600 text-white text-center px-4 py-2 rounded-md hover:bg-green-700 transition font-medium">
+                        Solve Now
+                    </a>
+                </div>
+            </div>
+
+            <!-- Medium Section -->
+            <div class="bg-blue-50 rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow duration-300 border border-blue-100">
+                <div class="bg-blue-600 p-3 text-white">
+                    <h2 class="text-2xl font-bold">Medium</h2>
+                </div>
+                <div class="p-4">
+                    <p class="text-gray-700 mb-1">Total Questions: 40</p>
+                    <p class="text-gray-700 mb-4">Not yet started</p>
+                    <div class="w-full bg-gray-200 rounded-full h-3 mb-4">
+                        <div class="bg-blue-500 h-3 rounded-full" style="width: 0%"></div>
+                    </div>
+                    <p class="text-gray-600 mb-3 text-sm">0% Done</p>
+                    <a th:href="@{/medium}" class="block w-full bg-blue-600 text-white text-center px-4 py-2 rounded-md hover:bg-blue-700 transition font-medium">
+                        Start Now
+                    </a>
+                </div>
+            </div>
+
+            <!-- Hard Section -->
+            <div class="bg-purple-50 rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow duration-300 border border-purple-100">
+                <div class="bg-purple-600 p-3 text-white">
+                    <h2 class="text-2xl font-bold">Hard</h2>
+                </div>
+                <div class="p-4">
+                    <p class="text-gray-700 mb-1">Total Questions: 20</p>
+                    <p class="text-gray-700 mb-4">Not yet started</p>
+                    <div class="w-full bg-gray-200 rounded-full h-3 mb-4">
+                        <div class="bg-purple-500 h-3 rounded-full" style="width: 0%"></div>
+                    </div>
+                    <p class="text-gray-600 mb-3 text-sm">0% Done</p>
+                    <a th:href="@{/hard}" class="block w-full bg-purple-600 text-white text-center px-4 py-2 rounded-md hover:bg-purple-700 transition font-medium">
+                        Start Now
+                    </a>
+                </div>
+            </div>
+
+            <!-- Stream Collectors Section -->
+            <div class="bg-yellow-50 rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow duration-300 border border-yellow-100">
+                <div class="bg-yellow-500 p-3 text-white">
+                    <h2 class="text-2xl font-bold">Stream Collectors</h2>
+                </div>
+                <div class="p-4">
+                    <p class="text-gray-700 mb-1">Total Questions: 15</p>
+                    <p class="text-gray-700 mb-4">Not yet started</p>
+                    <div class="w-full bg-gray-200 rounded-full h-3 mb-4">
+                        <div class="bg-yellow-500 h-3 rounded-full" style="width: 0%"></div>
+                    </div>
+                    <p class="text-gray-600 mb-3 text-sm">0% Done</p>
+                    <a th:href="@{/collectors}" class="block w-full bg-yellow-500 text-white text-center px-4 py-2 rounded-md hover:bg-yellow-600 transition font-medium">
+                        Start Now
+                    </a>
+                </div>
+            </div>
+
+            <!-- Intermediate Operations Section -->
+            <div class="bg-teal-50 rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow duration-300 border border-teal-100">
+                <div class="bg-teal-600 p-3 text-white">
+                    <h2 class="text-2xl font-bold">Intermediate Ops</h2>
+                </div>
+                <div class="p-4">
+                    <p class="text-gray-700 mb-1">Total Questions: 30</p>
+                    <p class="text-gray-700 mb-4">5 More to go</p>
+                    <div class="w-full bg-gray-200 rounded-full h-3 mb-4">
+                        <div class="bg-teal-500 h-3 rounded-full" style="width: 83%"></div>
+                    </div>
+                    <p class="text-gray-600 mb-3 text-sm">83% Done</p>
+                    <a th:href="@{/intermediate}" class="block w-full bg-teal-600 text-white text-center px-4 py-2 rounded-md hover:bg-teal-700 transition font-medium">
+                        Solve Now
+                    </a>
+                </div>
+            </div>
+
+            <!-- Top 85 Section -->
+            <div class="bg-red-50 rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow duration-300 border border-red-100">
+                <div class="bg-red-600 p-3 text-white">
+                    <h2 class="text-2xl font-bold">Top 85</h2>
+                </div>
+                <div class="p-4">
+                    <p class="text-gray-700 mb-1">Total Questions: 85</p>
+                    <p class="text-gray-700 mb-4">Not yet started</p>
+                    <div class="w-full bg-gray-200 rounded-full h-3 mb-4">
+                        <div class="bg-red-500 h-3 rounded-full" style="width: 0%"></div>
+                    </div>
+                    <p class="text-gray-600 mb-3 text-sm">0% Done</p>
+                    <a th:href="@{/top85}" class="block w-full bg-red-600 text-white text-center px-4 py-2 rounded-md hover:bg-red-700 transition font-medium">
+                        Start Now
+                    </a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-green-600 text-white py-3 px-4">
+        <div class="container mx-auto flex flex-col md:flex-row justify-between items-center">
+            <div class="text-center md:text-left mb-3 md:mb-0">
+                <p class="text-sm">© 2025 StreamMaster. All rights reserved.</p>
+            </div>
+            <div class="flex space-x-4">
+                <a href="/about" class="bg-white text-green-600 px-4 py-1 rounded-md font-medium hover:bg-gray-100 transition flex items-center">
+                    <span class="mr-1">About</span> <span class="text-yellow-500">🏆</span>
+                </a>
+                <a href="https://github.com/streammaster" class="bg-white text-green-600 px-4 py-1 rounded-md font-medium hover:bg-gray-100 transition">
+                    <i class="fab fa-github mr-1"></i> GitHub
+                </a>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>

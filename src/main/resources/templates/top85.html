@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Insert title here</title>
+    <style>
+      body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f9fafb;
+  margin: 0;
+  padding: 20px;
+}
+
+h1 {
+  color: #1f2937;
+  margin-bottom: 30px;
+}
+
+table {
+  width: 80%;
+  border-collapse: collapse;
+  margin: 20px auto;
+  background-color: white;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+thead {
+  background-color: #10b981;
+  color: white;
+}
+
+th, td {
+  border: 1px solid #e5e7eb;
+  padding: 12px 16px;
+  text-align: left;
+}
+
+th {
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 0.875rem;
+  letter-spacing: 0.05em;
+}
+
+tr:nth-child(even) {
+  background-color: #f3f4f6;
+}
+
+tr:hover {
+  background-color: #ecfdf5;
+}
+
+.answer {
+  display: none;
+  color: #047857;
+  background-color: #d1fae5;
+  padding: 10px;
+  border-radius: 4px;
+  margin-top: 8px;
+  font-family: monospace;
+  border-left: 4px solid #10b981;
+}
+
+button {
+  padding: 8px 16px;
+  cursor: pointer;
+  background-color: #10b981;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-weight: 500;
+  transition: background-color 0.2s;
+}
+
+button:hover {
+  background-color: #059669;
+}
+
+a {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 8px 16px;
+  background-color: #4b5563;
+  color: white;
+  text-decoration: none;
+  border-radius: 4px;
+  font-weight: 500;
+  transition: background-color 0.2s;
+}
+
+a:hover {
+  background-color: #374151;
+}
+    </style>
+    <script>
+        function toggleAnswer(id) {
+            var ans = document.getElementById("answer_" + id);
+            if (ans.style.display === "none") {
+                ans.style.display = "block";
+            } else {
+                ans.style.display = "none";
+            }
+        }
+    </script>
+</head>
+<body>
+
+    <h1 style="text-align: center;">Top 85 Questions</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Question</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="q : ${questions}">
+                <td th:text="${q.id}">1</td>
+                <td th:text="${q.questionText}">Sample Question?</td>
+                <td>
+                    <form th:action="@{/showAns}" method="get" style="display: inline;">
+                        <input type="hidden" name="id" th:value="${q.id}" />
+                        <button type="submit">Show Answer</button>
+                    </form>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+    <div style="text-align: center;">
+        <a th:href="@{/top85}">Go Back</a>
+    </div>
+
+</body>
+</html>
